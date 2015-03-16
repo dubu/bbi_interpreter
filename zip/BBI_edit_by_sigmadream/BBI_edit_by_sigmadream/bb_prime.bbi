@@ -1,0 +1,26 @@
+//-----------------------------
+//  소수를 구한다  bb_prime.bbi
+//-----------------------------
+func is_prime(n)        // n이 소수라면 참을 반환한다
+    return 0 ? n < 2    // 2미만은 소수가 아니다
+    return 1 ? n == 2   // 2는 소수다
+    return 0 ? n%2 == 0 // 2이외의 짝수는 소수가 아니다 
+    i=3
+    while i*i <= n
+        if n%i == 0
+            return 0    // 나누어 떨어지면 소수가 아니다
+        end
+        i = i + 2
+    end
+    return 1            // 소수다
+end
+
+func main()
+    for n=1 to 1000     // 1000이하의 소수는
+        if is_prime(n)
+            print n, " "
+        end
+    end
+    println ""
+end
+
